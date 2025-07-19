@@ -45,7 +45,7 @@ python -m venv .venv
 # Install Python dependencies
 pip install -r requirements.txt
 
-Required Tools Setup
+# Required Tools Setup
 1. Tesseract OCR
 Download from: https://github.com/tesseract-ocr/tesseract
 
@@ -62,7 +62,7 @@ Install PostgreSQL: https://www.postgresql.org/download/
 Enable the pgvector extension in your database:
 CREATE EXTENSION IF NOT EXISTS vector;
 
-#Environment Setup
+# Environment Setup
 Create a .env file in your root directory:
 
 COHERE_API_KEY=your_cohere_api_key
@@ -72,7 +72,7 @@ POSTGRES_DB=your_db_name
 POSTGRES_HOST=localhost
 POSTGRES_PORT=5432
 
-#Document Ingestion Pipeline
+# Document Ingestion Pipeline
 Extract text (and OCR images if needed) from PDF
 
 Chunk text using RecursiveCharacterTextSplitter or by title
@@ -81,7 +81,7 @@ Generate vector embeddings via HuggingFace
 
 Store chunks + metadata in PostgreSQL (with vector)
 
-#Ask Questions
+# Ask Questions
 The app retrieves top-k relevant document chunks and uses an LLM to generate a final answer.
 
 > Enter filename to search: ncert_class_12.pdf
@@ -90,7 +90,7 @@ The app retrieves top-k relevant document chunks and uses an LLM to generate a f
 Answer: Mitochondria are the powerhouses of the cell...
 Source: ncert_class_12.pdf | Page: 15
 
-#Tech Stack
+# Tech Stack
 LangChain – for chaining retrieval and generation
 
 HuggingFace Transformers – for embeddings and models
